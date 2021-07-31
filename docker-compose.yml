@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: sh -c ./entry_point.sh
+    container_name: rf_faces_service
+    env_file:
+      - .env
+    ports:
+      - ${PUBLISHED_PORT}:${TARGET_PORT}
+    volumes:
+      - .:/app
