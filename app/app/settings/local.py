@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY = 'm8^g%9#dx=kcs*ikyuz1)0*clvl-=vxglx3t3qzlaiebc83gk4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -86,11 +86,11 @@ WSGI_APPLICATION = 'app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': env('DB_HOST'),
-        'NAME': env('DB_NAME'),
-        'USER': env('DB_USER'),
-        'PASSWORD': env('DB_PASSWORD'),
-        'PORT': env('DB_PORT')
+        'HOST': 'localhost',
+        'NAME': 'r5',
+        'USER': 'developer',
+        'PASSWORD': 'developer',
+        'PORT': '5432'
     }
 }
 
@@ -143,5 +143,5 @@ STATIC_ROOT = '/app/statics/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-GOOGLE_API_KEY = env('GOOGLE_API_KEY')
-NY_TIMES_KEY = env('NY_TIMES_KEY')
+GOOGLE_API_KEY = 'AIzaSyClOqYT4rDI1rA90fGk0YD77H4ohG_ANNM'
+NY_TIMES_KEY = 'pBoQyFJTJ2Tm0HG4BWZZENl9uPnExzjE'

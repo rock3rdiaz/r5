@@ -1,0 +1,19 @@
+query($title: String, $author: String, $category: String) {
+  getBooksByParams(title: $title, author: $author, category: $category) {
+    identifier, title, subtitle, author, categories, createdDate, publicationDate,
+    publisher, image, modifiedDate
+  }
+}
+{
+  "author": "Dan Brown"
+}
+
+
+mutation($identifier: UUID!) {
+  removeBook(identifier: $identifier) {
+    message
+  }
+}
+{
+  "identifier": "9e2882c3-dfab-42b2-ab74-c0304aa2c057"
+}
