@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
     command: sh -c ./entry_point.sh
-    container_name: rf_faces_service
+    container_name: r5_service
     env_file:
       - .env
     ports:

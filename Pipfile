@@ -9,6 +9,8 @@ requests = "*"
 django-extensions = "*"
 django-environ = "*"
 gunicorn = "*"
+graphene-django = "*"
+psycopg2 = "*"
 
 [dev-packages]
 

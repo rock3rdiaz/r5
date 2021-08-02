@@ -1,0 +1,20 @@
+server {
+    listen 9999;
+    listen [::]:9999;
+
+    server_name r5_proxy;
+
+    root /app;
+
+    access_log /var/log/nginx/r5-access.log;
+    error_log /var/log/nginx/r5-error.log;
+
+    location / {
+        proxy_pass http://localhost:8000;
+    }
+
+    location /static/ {
+        alias /app/statics/;
+        autoindex on;
+    }
+}

@@ -3,3 +3,6 @@ services:
   backend:
     env_file:
     - .env.local
+    ports:
+      - ${PUBLISHED_PORT}:${TARGET_PORT}
+      - 9999:9999
