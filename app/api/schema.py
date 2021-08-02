@@ -1,4 +1,5 @@
 import graphene
+import graphql_jwt
 from graphene_django import DjangoObjectType
 
 from library.models import Book
@@ -38,8 +39,18 @@ class BookMutator(graphene.Mutation):
         return BookMutator(message=message)
 
 
-class Mutation(graphene.ObjectType):
+class BookMutation(graphene.ObjectType):
     remove_book = BookMutator.Field()
+
+
+class AuthMutation(graphene.ObjectType):
+    token_auth = graphql_jwt.ObtainJSONWebToken.Field()
+    verify_token = graphql_jwt.Verify.Field()
+    refresh_token = graphql_jwt.Refresh.Field()
+
+
+class Mutation(BookMutation, AuthMutation):
+    pass
 
 
 schema = graphene.Schema(query=Query, mutation=Mutation)

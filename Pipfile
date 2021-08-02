@@ -12,6 +12,9 @@ gunicorn = "*"
 graphene-django = "*"
 psycopg2 = "*"
 aiohttp = "*"
+pip = "*"
+install = "*"
+django-graphql-jwt = "*"
 
 [dev-packages]
 
